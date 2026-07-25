@@ -6,7 +6,9 @@
     "markdown-designer-skills": "bin/install.js"
   },
   "scripts": {
-    "publish:localskills": "npx -y @localskills/cli push skills/markdown-design"
+    "publish:skillssh": "npx -y skills add Sourabh10122002/markdown-designer",
+    "publish:localskills": "npx -y @localskills/cli push skills/markdown-design",
+    "release": "git push origin main && npm run publish:skillssh && npm run publish:localskills"
   },
   "files": [
     "bin",
