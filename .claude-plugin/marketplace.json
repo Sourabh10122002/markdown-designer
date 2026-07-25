@@ -8,7 +8,7 @@
     {
       "name": "markdown-designer",
       "source": "./",
-      "description": "Visual markdown skills: markdown-design (auto-applied design system for every .md Claude writes) and md-upgrade (retrofit existing plain files with diagrams, tables, and alerts).",
+      "description": "Visual markdown skill: an auto-applied design system for every .md the agent writes, plus a retrofit mode that upgrades existing plain files with diagrams, tables, and alerts.",
       "category": "productivity",
       "keywords": ["markdown", "mermaid", "documentation", "diagrams", "skills"],
       "license": "MIT",

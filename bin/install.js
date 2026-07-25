@@ -10,7 +10,7 @@ if (args.includes('--help') || args.includes('-h')) {
   console.log(`
 Usage: npx markdown-designer-skills [options]
 
-Installs the markdown-design and md-upgrade Claude Code skills.
+Installs the markdown-design Claude Code skill.
 
 Options:
   (none)        install globally into ~/.claude/skills/

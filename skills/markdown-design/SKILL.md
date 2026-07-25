@@ -1,6 +1,6 @@
 ---
 name: markdown-design
-description: Use whenever creating or substantially rewriting ANY Markdown (.md) file — READMEs, docs, plans, architecture notes, reports, summaries, runbooks, comparisons. Never ship plain-text-only markdown. Turns documents visual with Mermaid diagrams (flowchart, sequence, gantt, state, ER, pie, timeline), GitHub alerts, comparison tables, collapsible sections, and status indicators.
+description: Use whenever creating, substantially rewriting, or upgrading ANY Markdown (.md) file — READMEs, docs, plans, architecture notes, reports, summaries, runbooks, comparisons — including when the user asks to upgrade, beautify, redesign, or "make visual" an existing .md file. Never ship plain-text-only markdown. Turns documents visual with Mermaid diagrams (flowchart, sequence, gantt, state, ER, pie, timeline), GitHub alerts, comparison tables, collapsible sections, and status indicators.
 ---
 
 # Markdown Design
@@ -60,6 +60,22 @@ These prevent the most common render failures — full details in the cheatsheet
 - [ ] Content over ~30 lines that's secondary (logs, full configs, edge cases) is **collapsed**.
 - [ ] Diagrams appear **before** the prose that explains them.
 - [ ] Nothing is invented: diagrams and tables only restructure facts already established. No fake numbers in pie/gantt charts.
+
+## Retrofit mode — upgrading an existing file
+
+When asked to upgrade/beautify/redesign an **existing** markdown file (e.g. `/markdown-design path/to/file.md`), redesign its layout without changing its meaning:
+
+1. **Read the entire file first.** Never upgrade a file you've partially read.
+2. **Inventory upgrade opportunities** — walk the doc and mark: prose describing processes → diagrams; ≥3 parallel facts → tables; "Note that… / Be careful…" paragraphs → alerts; long secondary code/log blocks → `<details>`; scattered status words → status markers; missing summary line or TOC → add them.
+3. **Rewrite the file** applying the mapping table above, then **report** which sections became diagrams/tables/alerts, one line each.
+
+Hard rules for retrofits:
+
+- **Zero information loss.** Every fact in the original survives. Diagrams restructure content; they never replace details — keep the essential prose.
+- **Zero invention.** No made-up numbers, dates, or steps to fill out a chart. If a gantt needs dates the doc doesn't have, don't make a gantt.
+- **Preserve heading text** where possible — external links target those anchors. If a heading must change, keep the old anchor: `<a id="old-anchor"></a>`.
+- **Preserve the author's voice** in prose you keep — redesign layout, don't rewrite their words.
+- If the file is already visual or has no upgradeable structure, say so instead of decorating it.
 
 ## Restraint
 

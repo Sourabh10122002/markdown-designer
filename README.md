@@ -1,6 +1,6 @@
 # Markdown Designer
 
-**Two agent skills that stop your AI from generating plain-text markdown — every `.md` it writes gets diagrams, tables, alerts, and structure by default.**
+**An agent skill that stops your AI from generating plain-text markdown — every `.md` it writes gets diagrams, tables, alerts, and structure by default, and it can retrofit your existing files too.**
 
 [![skills.sh](https://img.shields.io/badge/skills.sh-markdown--designer-blue)](https://skills.sh/Sourabh10122002/markdown-designer)
 ![Agents](https://img.shields.io/badge/works%20with-Claude%20Code%20%C2%B7%20Cursor%20%C2%B7%20Codex%20%C2%B7%20Gemini%20CLI%20%2B12-brightgreen)
@@ -14,30 +14,26 @@ npx skills add Sourabh10122002/markdown-designer
 ```mermaid
 flowchart LR
     subgraph Triggers
-        W["Claude writes any .md file"]
-        U["You run /md-upgrade file.md"]
+        W["Agent writes any .md file"]
+        U["You ask to upgrade an existing .md"]
     end
-    subgraph Skills
-        MD["markdown-design<br/>(auto-applied design system)"]
-        UP["md-upgrade<br/>(retrofit existing files)"]
-    end
+    MD["markdown-design skill<br/>(design system + retrofit mode)"]
     subgraph References
         R1["mermaid-cheatsheet.md"]
         R2["visual-elements.md"]
         R3["templates.md"]
     end
     W --> MD
-    U --> UP
-    UP --> MD
+    U --> MD
     MD --> R1
     MD --> R2
     MD --> R3
 ```
 
-| Skill | Trigger | What it does |
+| Mode | Trigger | What it does |
 |---|---|---|
-| `markdown-design` | Automatic, whenever Claude creates/rewrites a `.md` file | Applies a design system: Mermaid diagrams, comparison tables, GitHub alerts, collapsible sections, status markers, doc templates |
-| `md-upgrade` | `/md-upgrade <path>` (or "upgrade this markdown") | Redesigns an **existing** plain file visually — zero information loss, zero invented data |
+| Design | Automatic, whenever the agent creates/rewrites a `.md` file | Applies a design system: Mermaid diagrams, comparison tables, GitHub alerts, collapsible sections, status markers, doc templates |
+| Retrofit | "Upgrade/beautify this markdown" or `/markdown-design <path>` | Redesigns an **existing** plain file visually — zero information loss, zero invented data |
 
 ## Install
 
@@ -57,7 +53,7 @@ This repo doubles as a [plugin marketplace](https://code.claude.com/docs/en/plug
 /plugin install markdown-designer@markdown-designer
 ```
 
-Plugin skills are namespaced, e.g. `/markdown-designer:md-upgrade`.
+Plugin skills are namespaced, e.g. `/markdown-designer:markdown-design`.
 
 </details>
 
@@ -83,14 +79,12 @@ node bin/install.js --uninstall
 bin/
 └── install.js                        # npx installer (--project, --uninstall, --help)
 skills/
-├── markdown-design/
-│   ├── SKILL.md                      # design system + structure→element mapping
-│   └── references/
-│       ├── mermaid-cheatsheet.md     # 11 diagram types, verified syntax, failure fixes
-│       ├── visual-elements.md        # alerts, tables, collapsible, badges, progress bars
-│       └── templates.md              # README / architecture / status / ADR / runbook skeletons
-└── md-upgrade/
-    └── SKILL.md                      # retrofit workflow with hard no-loss rules
+└── markdown-design/
+    ├── SKILL.md                      # design system + retrofit mode + structure→element mapping
+    └── references/
+        ├── mermaid-cheatsheet.md     # 11 diagram types, verified syntax, failure fixes
+        ├── visual-elements.md        # alerts, tables, collapsible, badges, progress bars
+        └── templates.md              # README / architecture / status / ADR / runbook skeletons
 ```
 
 ## Try it
@@ -98,4 +92,4 @@ skills/
 After installing, open a **new** Claude Code session and ask:
 
 - *"Write an architecture doc for a URL shortener"* → should come back with flowchart + sequence diagram + ER diagram + decision table.
-- */md-upgrade README.md* on any old plain file → redesigned in place.
+- *"Upgrade README.md"* on any old plain file → redesigned in place, no information lost.
