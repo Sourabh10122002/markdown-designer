@@ -34,20 +34,29 @@ flowchart LR
 
 ## Install
 
+Via the [skills.sh](https://skills.sh) ecosystem (works for Claude Code and other agents):
+
+```bash
+npx skills add Sourabh10122002/markdown-designer
+```
+
+Or via this repo's own installer:
+
 ```bash
 npx markdown-designer-skills
 ```
 
-Copies both skills into `~/.claude/skills/`, making them active in **all** your Claude Code sessions (new sessions pick them up on start).
+Both put the skills where Claude Code discovers them, making them active in your sessions (new sessions pick them up on start).
 
 | Command | Effect |
 |---|---|
+| `npx skills add Sourabh10122002/markdown-designer` | Install via the skills.sh CLI |
 | `npx markdown-designer-skills` | Install globally (`~/.claude/skills/`) |
 | `npx markdown-designer-skills --project` | Install only for the current project (`./.claude/skills/`) |
 | `npx markdown-designer-skills --uninstall` | Remove the skills |
 
 > [!IMPORTANT]
-> The `npx` command works once the package is published (`npm publish`). Until then, install from a local checkout with `npx /path/to/markdown-designer` or `./install.sh`.
+> The `npx markdown-designer-skills` form works once the package is published to npm (`npm publish`). The `npx skills add` form only needs this GitHub repo to be public.
 
 > [!NOTE]
 > This repo is the editable source. After changing anything under [skills/](skills/), re-run the install command to sync.

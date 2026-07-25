@@ -1,0 +1,26 @@
+{
+  "name": "markdown-designer-skills",
+  "version": "1.0.0",
+  "description": "Claude Code skills that make every generated markdown file visually rich — Mermaid diagrams, tables, GitHub alerts, collapsible sections — instead of plain text.",
+  "bin": {
+    "markdown-designer-skills": "bin/install.js"
+  },
+  "files": [
+    "bin",
+    "skills",
+    "README.md"
+  ],
+  "engines": {
+    "node": ">=16.7.0"
+  },
+  "keywords": [
+    "claude",
+    "claude-code",
+    "skills",
+    "markdown",
+    "mermaid",
+    "documentation"
+  ],
+  "author": "Sourabh",
+  "license": "MIT"
+}
