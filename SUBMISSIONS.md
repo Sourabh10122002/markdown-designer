@@ -1,6 +1,6 @@
 # Marketplace Submission Kit
 
-Status tracker + paste-ready content for listing markdown-design everywhere. (Local working file — not committed.)
+Status tracker + paste-ready content for listing markdown-design everywhere.
 
 ## Already live / automatic — nothing to do
 
