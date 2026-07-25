@@ -5,6 +5,9 @@
   "bin": {
     "markdown-designer-skills": "bin/install.js"
   },
+  "scripts": {
+    "publish:localskills": "npx -y @localskills/cli push skills/markdown-design"
+  },
   "files": [
     "bin",
     "skills",

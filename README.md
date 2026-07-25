@@ -71,7 +71,7 @@ node bin/install.js --uninstall
 </details>
 
 > [!NOTE]
-> This repo is the editable source. After changing anything under [skills/](skills/), re-run the install command to sync.
+> This repo is the editable source. After changing anything under [skills/](skills/), re-run the install command to sync locally. GitHub-based registries ([skills.sh](https://skills.sh/Sourabh10122002/markdown-designer)) pick up pushes automatically; [localskills.sh](https://localskills.sh/s/NmeCXoFUV9) needs `npm run publish:localskills` to ship a new version.
 
 ## Layout
 
