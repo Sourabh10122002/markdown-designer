@@ -1,6 +1,13 @@
 # Markdown Designer
 
-**Two Claude Code skills that stop Claude from generating plain-text markdown — every `.md` it writes gets diagrams, tables, alerts, and structure by default.**
+**Two agent skills that stop your AI from generating plain-text markdown — every `.md` it writes gets diagrams, tables, alerts, and structure by default.**
+
+[![skills.sh](https://img.shields.io/badge/skills.sh-markdown--designer-blue)](https://skills.sh/Sourabh10122002/markdown-designer)
+![Agents](https://img.shields.io/badge/works%20with-Claude%20Code%20%C2%B7%20Cursor%20%C2%B7%20Codex%20%C2%B7%20Gemini%20CLI%20%2B12-brightgreen)
+
+```bash
+npx skills add Sourabh10122002/markdown-designer
+```
 
 ## How the skills work
 
@@ -34,29 +41,38 @@ flowchart LR
 
 ## Install
 
-Via the [skills.sh](https://skills.sh) ecosystem (works for Claude Code and other agents):
-
 ```bash
 npx skills add Sourabh10122002/markdown-designer
 ```
 
-Or via this repo's own installer:
+The [skills.sh](https://skills.sh/Sourabh10122002/markdown-designer) CLI installs into the universal `~/.agents/skills/` directory and symlinks the skills wherever your agents look — Claude Code, Cursor, Codex, Gemini CLI, GitHub Copilot, Windsurf, and 12+ more. New agent sessions pick them up automatically.
 
-```bash
-npx markdown-designer-skills
+<details>
+<summary><b>Alternative: install as a Claude Code plugin</b></summary>
+
+This repo doubles as a [plugin marketplace](https://code.claude.com/docs/en/plugin-marketplaces). In Claude Code:
+
+```text
+/plugin marketplace add Sourabh10122002/markdown-designer
+/plugin install markdown-designer@markdown-designer
 ```
 
-Both put the skills where Claude Code discovers them, making them active in your sessions (new sessions pick them up on start).
+Plugin skills are namespaced, e.g. `/markdown-designer:md-upgrade`.
 
-| Command | Effect |
-|---|---|
-| `npx skills add Sourabh10122002/markdown-designer` | Install via the skills.sh CLI |
-| `npx markdown-designer-skills` | Install globally (`~/.claude/skills/`) |
-| `npx markdown-designer-skills --project` | Install only for the current project (`./.claude/skills/`) |
-| `npx markdown-designer-skills --uninstall` | Remove the skills |
+</details>
 
-> [!IMPORTANT]
-> The `npx markdown-designer-skills` form works once the package is published to npm (`npm publish`). The `npx skills add` form only needs this GitHub repo to be public.
+<details>
+<summary><b>Alternative: install from a local checkout</b></summary>
+
+```bash
+git clone https://github.com/Sourabh10122002/markdown-designer.git
+cd markdown-designer
+node bin/install.js            # → ~/.claude/skills/  (or: ./install.sh)
+node bin/install.js --project  # → ./.claude/skills/ of the current project
+node bin/install.js --uninstall
+```
+
+</details>
 
 > [!NOTE]
 > This repo is the editable source. After changing anything under [skills/](skills/), re-run the install command to sync.

@@ -1,0 +1,18 @@
+{
+  "name": "markdown-designer",
+  "owner": {
+    "name": "Sourabh",
+    "url": "https://github.com/Sourabh10122002"
+  },
+  "plugins": [
+    {
+      "name": "markdown-designer",
+      "source": "./",
+      "description": "Visual markdown skills: markdown-design (auto-applied design system for every .md Claude writes) and md-upgrade (retrofit existing plain files with diagrams, tables, and alerts).",
+      "category": "productivity",
+      "keywords": ["markdown", "mermaid", "documentation", "diagrams", "skills"],
+      "license": "MIT",
+      "homepage": "https://github.com/Sourabh10122002/markdown-designer"
+    }
+  ]
+}

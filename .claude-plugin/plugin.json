@@ -1,0 +1,12 @@
+{
+  "name": "markdown-designer",
+  "description": "Make every AI-generated markdown file visually rich — Mermaid diagrams, comparison tables, GitHub alerts, collapsible sections — via the markdown-design skill (auto-applied design system) and md-upgrade (retrofit existing files).",
+  "version": "1.0.0",
+  "author": {
+    "name": "Sourabh",
+    "url": "https://github.com/Sourabh10122002"
+  },
+  "homepage": "https://github.com/Sourabh10122002/markdown-designer",
+  "license": "MIT",
+  "keywords": ["markdown", "mermaid", "documentation", "diagrams", "skills"]
+}
